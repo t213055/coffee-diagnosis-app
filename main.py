@@ -3,7 +3,7 @@ from google import genai
 from google.genai import types
 
 # --- [重要] 新しいAPIキーをここに貼り付けてください ---
-API_KEY = "AIzaSyAOLISt18dbhA9qr-Ta0dK-Uyo6xwn8Qrg"
+API_KEY = st.secrets["GEMINI_API_KEY"]
 
 # 最新のクライアント設定
 client = genai.Client(api_key=API_KEY)
@@ -60,4 +60,5 @@ if submitted:
         except Exception as e:
             # もしここでも404が出るなら、APIキー側の設定に問題があります
             st.error(f"エラーが発生しました: {e}")
+
             st.info("AI Studioで『Create API key in NEW project』を選択して、新しいプロジェクトでキーを作り直してみてください。")

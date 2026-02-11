@@ -1,7 +1,7 @@
 import streamlit as st
 from google import genai
 from google.genai import types
-
+import os
 # --- [重要] 新しいAPIキーをここに貼り付けてください ---
 API_KEY = st.secrets["GEMINI_API_KEY"]
 
@@ -62,3 +62,4 @@ if submitted:
             st.error(f"エラーが発生しました: {e}")
 
             st.info("AI Studioで『Create API key in NEW project』を選択して、新しいプロジェクトでキーを作り直してみてください。")
+

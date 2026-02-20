@@ -112,7 +112,7 @@ if submitted:
             with col2:
                 # 2. 画像の表示とサイズ調整
                 # widthで横幅を指定（ピクセル単位）。お好みの大きさに変えてください
-                st.image("おじ１.png", width=100, caption="考え中のバリスタ")
+                st.image("おじ１.png", width=100)
 
             try:
                 response = client.models.generate_content(
@@ -130,4 +130,5 @@ if submitted:
                 # もしここでも404が出るなら、APIキー側の設定に問題があります
                 st.error(f"エラーが発生しました: {e}")
                 st.info("AI Studioで『Create API key in NEW project』を選択して、新しいプロジェクトでキーを作り直してみてください。")
+
 
